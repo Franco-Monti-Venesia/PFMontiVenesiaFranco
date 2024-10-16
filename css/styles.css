@@ -22,6 +22,7 @@ header {
   position: fixed;
   width: 100dvw;
   box-shadow: 0px -1px 20px rgba(146, 137, 98, 0.6);
+  z-index: 10;
 }
 
 .nav {
@@ -53,6 +54,7 @@ header {
 .header__logo {
   max-width: 6.7rem;
 }
+
 
 /* ----MAIN---- */
 .main, .main__ubicacion {
@@ -184,6 +186,24 @@ header {
   background-color: rgba(255, 255, 255, 0.8666666667);
 }
 
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 10%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+.productos__cartas {
+  view-timeline-name: --reveal;
+  animation-name: show;
+  animation-fill-mode: both;
+  animation-timeline: --reveal;
+  animation-range: entry 25% cover 50%;
+}
+
 .productos__cartas:hover {
   box-shadow: 0 0 15px 5px #ddd;
 }
@@ -243,6 +263,9 @@ header {
     width: 100%;
     margin-top: 6%;
     text-align: start;
+  }
+  .div__titulo {
+    text-align: center;
   }
   .div__parrafo {
     padding: 0.2rem;
@@ -350,6 +373,14 @@ h3 {
 .section__imagen, .section__imagen__maquina {
   max-width: 500px;
   margin: 2% 2% 6% 2%;
+}
+
+.section__imagen {
+  view-timeline-name: --reveal;
+  animation-name: show;
+  animation-fill-mode: both;
+  animation-timeline: --reveal;
+  animation-range: entry 0% cover 30%;
 }
 
 @media (max-width: 480px) {

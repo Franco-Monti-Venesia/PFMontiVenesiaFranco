@@ -12,13 +12,9 @@ body {
   max-width: 100dvw;
 }
 
-/* ----HEADER---- */
+/* ----HEADER MENU DE HAMBURGUESA---- */
 header {
   background-color: #eee;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  padding: 0.6rem;
   position: fixed;
   width: 100dvw;
   box-shadow: 0px -1px 20px rgba(146, 137, 98, 0.6);
@@ -26,20 +22,33 @@ header {
 }
 
 .nav {
-  text-align: center;
-  align-items: center;
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 4%;
-  padding-right: 2%;
+  height: 90px;
+  width: 100%;
 }
 
-.nav__list {
-  padding: 0;
-  margin: 0;
+.nav__enlace {
+  position: absolute;
+  padding: 10px 10px;
 }
 
-.nav__link {
+.nav__logo {
+  height: 70px;
+}
+
+.nav__i {
+  color: #b8a965;
+}
+
+.nav__ul {
+  padding-left: 55%;
+}
+
+.nav .nav__ul .nav__li {
+  display: inline-block;
+  line-height: 90px;
+}
+
+.nav__a {
   text-decoration: none;
   font-size: 1.3rem;
   padding: 0 0.25rem;
@@ -47,15 +56,75 @@ header {
   height: 100%;
 }
 
-.nav__link:hover {
+.nav__a:hover {
   color: #b8a965;
+  transition: 0.5s;
 }
 
-.header__logo {
-  max-width: 6.7rem;
+.nav__checkbtn {
+  font-size: 35px;
+  color: #fff;
+  line-height: 90px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+  margin-left: 90%;
 }
 
+#nav__check {
+  display: none;
+}
 
+@media (max-width: 952px) {
+  .nav__enlace {
+    padding-left: 10px;
+  }
+  .nav__logo {
+    height: 65px;
+    padding-top: 5px;
+  }
+  .nav__ul {
+    padding-left: 30%;
+  }
+  .nav .nav__ul .nav__li .nav__a {
+    font-size: 18px;
+  }
+}
+@media (max-width: 600px) {
+  .nav__checkbtn {
+    display: block;
+  }
+  .nav__ul {
+    width: 100%;
+    height: 100vh;
+    background-color: #eee;
+    position: fixed;
+    padding-left: 0;
+    top: 90px;
+    right: -100%;
+    align-items: center;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  .nav .nav__ul .nav__li {
+    display: block;
+    margin: 60px 0;
+    line-height: 40px;
+  }
+  .nav .nav__ul .nav__li:first-child {
+    margin-top: 140px;
+  }
+  .nav .nav__ul .nav__li .nav__a {
+    font-size: 25px;
+  }
+  .nav__li .a:hover, .nav__li .nav__a.active {
+    background-color: none;
+    color: #b8a965;
+  }
+  #nav__check:checked ~ .nav__ul {
+    right: 0;
+  }
+}
 /* ----MAIN---- */
 .main, .main__ubicacion {
   padding: 9% 10.5%;
@@ -227,19 +296,8 @@ header {
   body {
     width: 100%;
   }
-  .header__logo {
-    max-width: 4rem;
-  }
-  .nav__link {
-    font-size: 1.1rem;
-    padding: 0.3rem;
-  }
-  .nav__link2 {
-    font-size: 1.1rem;
-    padding: 0.3rem;
-  }
   .main, .main__ubicacion {
-    padding: 25% 9% 10% 9%;
+    padding: 30% 9% 10% 9%;
     font-size: 0.9rem;
   }
   .main__titulo {
@@ -301,6 +359,13 @@ header {
     text-align: center;
     margin: 6% 0 -3% 0;
     font-size: 1.4rem;
+  }
+}
+@media (max-width: 400px) {
+  .section__iframe__maps {
+    width: 300px;
+    height: 150px;
+    box-shadow: 4px 4px 15px 1px #aaa;
   }
 }
 /* ----FOOTER---- */
@@ -434,7 +499,7 @@ h3 {
     margin-top: 4%;
   }
   .section__iframe__maps {
-    width: 300px;
+    width: 285px;
     height: 150px;
     box-shadow: 4px 4px 15px 1px #aaa;
   }

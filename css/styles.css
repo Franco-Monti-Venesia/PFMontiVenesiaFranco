@@ -152,6 +152,7 @@ header {
   height: 28rem;
   width: 60rem;
   align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -366,6 +367,11 @@ header {
     width: 300px;
     height: 150px;
     box-shadow: 4px 4px 15px 1px #aaa;
+  }
+}
+@media (min-width: 1550px) {
+  .section__iframe {
+    padding: 6% 8% 0 2%;
   }
 }
 /* ----FOOTER---- */
